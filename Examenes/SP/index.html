@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>SP</title>
+
+        <!-- bootstrap / css -->
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/estilos.css">
+
+        <!-- jquery -->
+        <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+
+        <!-- typescript -->
+        <script src="./vehiculo.js"></script>
+        <script src="./auto.js"></script>
+        <script src="./camioneta.js"></script>
+        <script src="./funciones.js"></script>
+    </head>
+
+    <body class="container">
+      <div id="contenedor" class="justify-content-center">
+
+        <div id="popup" class="form-group">
+            <div class="row justify-content-between divRow">
+                <label for="numId" class="col-2 form-control-label">Id:</label>
+                <input type="number" id="numId" class="col-9 form-control" placeholder="Id..." readonly><br>
+            </div>       
+        
+            <div class="row justify-content-between divRow">
+                <label for="txtMarca" class="col-2 form-control-label">Marca:</label>
+                <input type="text" id="txtMarca" class="col-9 form-control" placeholder="Marca..."><br>
+            </div>
+
+            <div class="row justify-content-between divRow">
+                <label for="numMod" class="col-2 form-control-label">Modelo:</label>
+                <input type="number" id="numMod" class="col-9 form-control" placeholder="Modelo..."/><br>
+            </div>
+
+            <div class="row justify-content-between divRow">
+                <label for="numPrecio" class="col-2 form-control-label">Precio:</label>
+                <input type="number" id="numPrecio" class="col-9 form-control" placeholder="Precio..."/><br>
+            </div>
+            
+            <div class="row justify-content-between divRow">
+                <label for="selTipo" class="col-2 form-control-label">Tipo:</label>
+                <select id="selTipo" onchange="vehiculos.Mostrar()" class="col-9 form-control">
+                    <option value="Auto">Auto</option>
+                    <option value="Camioneta">Camioneta</option>
+                </select>
+                <br>
+            </div>
+
+            <div id="showPuertas">
+                <div class="row justify-content-between divRow">
+                    <label for="numPuer" class="col-2 form-control-label">Cantidad de puertas:</label>
+                    <input type="number" id="numPuer" class="col-9 form-control"><br>
+                </div>
+            </div>
+
+            <div id="showCuatro" class="form-check-inline">
+                <label for="chkCuatro" class="form-check-label">Cuatro X cuatro:</label>
+                <input type="checkbox" id="chkCuatro" class="form-check-input"><br>
+            </div>
+    
+            <!-- <div id="divGuardar">-->
+                <button id="btnGuardar" class="btn btn-success">Guardar</button>
+            <!-- </div> -->
+        </div>
+
+        <div class="form-group">
+            <div class="row justify-content-center">
+                <button id="btnAgregar" class="btn btn-primary">Agregar</button>
+            </div>
+            <br>
+
+
+            <h3>Filtrar por:</h3>
+            <select id="selFiltro" onchange="vehiculos.Filtrar()" class="form-control">
+                <option value=" "> </option>
+                <option value="Auto">Auto</option>
+                <option value="Camioneta">Camioneta</option>
+            </select>
+
+            <div id="showProm">
+                <div>
+                    <label for="txtProm" class="col-2 form-control-label">Precio promedio: </label>
+                    <input type="text" id="txtProm" class="form-control">
+                </div>
+            </div>
+
+            <button id="btnPromedio" class="btn btn-default">Calcular Promedio</button>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead id="thead"></thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+      </div>
+    </body>
+</html>

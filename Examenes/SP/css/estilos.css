@@ -1,0 +1,22 @@
+body{
+    background-color: cadetblue;
+}
+
+#selTipo{
+    width: 50%;
+}
+#popup{
+    position: fixed;
+    animation-name: aparecer;
+    animation-duration: 1s;
+    background-color: chocolate;
+    padding: 2rem;
+    width: 50%;
+}
+input, select{
+    padding: 1rem;
+}
+@keyframes aparecer{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
